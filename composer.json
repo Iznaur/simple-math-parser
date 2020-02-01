@@ -1,0 +1,30 @@
+{
+  "name": "iznaur/simple-math-parser-bundle",
+  "description": "",
+  "minimum-stability": "dev",
+  "type": "symfony-bundle",
+  "require": {
+    "php": "^7.4.0",
+    "symfony/framework-bundle": "^5.0",
+    "symfony/config": "^5.0"
+  },
+  "require-dev": {
+    "symfony/phpunit-bridge": "^5.1@dev"
+  },
+  "authors": [
+    {
+      "name": "Iznaur",
+      "email": "Reistlin.R@yandex.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Iznaur\\SimpleMathParserBundle\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Iznaur\\SimpleMathParserBundle\\Tests\\": "tests/"
+    }
+  }
+}

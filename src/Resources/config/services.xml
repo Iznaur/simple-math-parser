@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="simple_math_parser.parser" class="Iznaur\SimpleMathParserBundle\Parser">
+            <argument type="service" id="simple_math_parser.calculator_strategy"/>
+        </service>
+        <service id="simple_math_parser.simple_math_parser_calculator_strategy"
+                 class="Iznaur\SimpleMathParserBundle\ShuntingYardCalculator\ShuntingYardCalculatorStrategy">
+            <argument type="service" id="simple_math_parser.shunting_yard_calculator_lexer"/>
+        </service>
+        <service id="simple_math_parser.shunting_yard_calculator_lexer"
+                 class="Iznaur\SimpleMathParserBundle\ShuntingYardCalculator\Lexer"/>
+        <service id="simple_math_parser.calculator_strategy"
+                 alias="simple_math_parser.simple_math_parser_calculator_strategy"/>
+        <service id="Iznaur\SimpleMathParserBundle\Parser" alias="simple_math_parser.parser"/>
+    </services>
+</container>
